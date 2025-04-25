@@ -157,7 +157,7 @@ def main() -> int:
         "-c",
         "--config-file",
         type=pathlib.Path,
-        default=importlib.resources.path("proto2ros.configuration", "default.yaml"),
+        default=str(importlib.resources.files("proto2ros.configuration").joinpath("default.yaml")),
         help="Base configuration file for the generation procedure.",
     )
     parser.add_argument(
